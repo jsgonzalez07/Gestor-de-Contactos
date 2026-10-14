@@ -3,7 +3,7 @@
  */
 
 package com.mycompany.gestorcontactos;
-
+import vista.VistaAgenda;
 /**
  *
  * @author juans
@@ -11,6 +11,8 @@ package com.mycompany.gestorcontactos;
 public class GestorContactos {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        VistaAgenda ventana = new VistaAgenda();
+        ventana.setLocationRelativeTo(null);
+        ventana.setVisible(true);
     }
 }
