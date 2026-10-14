@@ -24,5 +24,18 @@ public class ControladorAgenda {
         }
         agenda.guardarContacto(nombre, telefono);
         return "Contacto " + nombre + " guardado correctamente";
+    }
+
+    public String buscarContacto(String nombre) {
+        nombre = nombre.trim();
+        if (nombre.isEmpty()) {
+            return "Debe ingresar el nombre a buscar";
+        }
+        
+        String telefono = agenda.buscarTelefono(nombre);
+        if (telefono != null) {
+            return "Telefono de " + nombre + ": " + telefono;
+        }        
+        return "El contacto " + nombre + " no fue encontrado";
     }    
 }
