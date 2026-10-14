@@ -21,5 +21,13 @@ public class Agenda {
         contactos.add(nuevo);
     }
     
+    public String buscarTelefono(String nombre){
+        for (Contacto c : contactos) {
+            if (c.getNombre().equalsIgnoreCase(nombre)){
+                return c.getTelefono();
+            }
+        }
+        return null;
+    }
     
 }
