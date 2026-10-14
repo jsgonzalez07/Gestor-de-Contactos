@@ -14,5 +14,12 @@ public class Agenda {
 
     public Agenda() {
         contactos = new ArrayList<>();
-    }    
+    }  
+    
+    public void guardarContacto(String nombre, String telefono){
+        Contacto nuevo = new Contacto(nombre, telefono);
+        contactos.add(nuevo);
+    }
+    
+    
 }
