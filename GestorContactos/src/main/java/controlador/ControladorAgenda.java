@@ -14,5 +14,15 @@ public class ControladorAgenda {
     public ControladorAgenda() {
         agenda = new Agenda();
     }
-            
+
+    public String guardarContacto(String nombre, String telefono){
+        nombre = nombre.trim();
+        telefono = telefono.trim();
+
+        if (nombre.isEmpty() || telefono.isEmpty()){
+            return "Debe ingresar el nombre y el telefono";
+        }
+        agenda.guardarContacto(nombre, telefono);
+        return "Contacto " + nombre + " guardado correctamente";
+    }    
 }
