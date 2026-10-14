@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vista;
+import controlador.ControladorAgenda;
 
 /**
  *
@@ -11,12 +12,14 @@ package vista;
 public class VistaAgenda extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VistaAgenda.class.getName());
-
+    private ControladorAgenda controlador;
+    
     /**
      * Creates new form VistaAgenda
      */
     public VistaAgenda() {
         initComponents();
+        controlador = new ControladorAgenda();
     }
 
     /**
@@ -155,11 +158,12 @@ public class VistaAgenda extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombreActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
+        String resultado = controlador.guardarContacto(txtNombre.getText(), txtTelefono.getText());
+        areaResultados.setText(resultado);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
+        areaResultados.setText(controlador.buscarContacto(txtBuscarNombre.getText()));
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
