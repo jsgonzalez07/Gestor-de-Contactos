@@ -23,5 +23,24 @@ public class ControladorAgendaTest {
         assertEquals("Debe ingresar el nombre y el telefono", controlador.guardarContacto("", "3001234567"));
     }
 
+//Metodo buscarContacto con datos, si no existe y vacio    
+    @Test
+    public void testBuscarContacto_ControladorAgenda(){
+        ControladorAgenda controlador = new ControladorAgenda();
+        controlador.guardarContacto("Juan", "3001234567");
+        assertEquals("Telefono de Juan: 3001234567", controlador.buscarContacto("Juan"));
+    }    
     
+    @Test
+    public void testBuscarContactoNoExiste_ControladorAgenda(){
+        ControladorAgenda controlador = new ControladorAgenda();
+        controlador.guardarContacto("Juan", "3001234567");
+        assertEquals("El contacto Sebastian no fue encontrado", controlador.buscarContacto("Sebastian"));
+    }
+    
+    @Test
+    public void testBuscarContactoVacio_ControladorAgenda(){
+        ControladorAgenda controlador = new ControladorAgenda();
+        assertEquals("Debe ingresar el nombre a buscar", controlador.buscarContacto(""));
+    }        
 }
