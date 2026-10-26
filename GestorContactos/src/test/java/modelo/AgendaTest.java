@@ -15,5 +15,12 @@ public class AgendaTest {
         Agenda agenda = new Agenda();
         agenda.guardarContacto("Juan", "3001234567");
         assertEquals("3001234567", agenda.buscarTelefono("Juan"));
-    }    
+    }
+
+    @Test
+    public void testBuscarTelefonoNoExiste_Agenda(){
+        Agenda agenda = new Agenda();
+        agenda.guardarContacto("Juan", "3001234567");
+        assertNull(agenda.buscarTelefono("Sebastian"));
+    }       
 }
